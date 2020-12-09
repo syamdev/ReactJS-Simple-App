@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/header';
+import Input from './components/input';
+import playerData from './data';
+import Cards from './containers/Cards';
 import './App.css';
 
 function App() {
+  const [title, setTitle] = useState('')
+  const changeHandler = e => {
+    setTitle(e.target.value)
+  }
+  const playerFilter = playerData.filter(player => player.title.toLocaleLowerCase().includes(title.toLocaleLowerCase()))
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Input value={title} change={changeHandler}/>
+      <Cards playerData={playerFilter}/>
     </div>
   );
 }

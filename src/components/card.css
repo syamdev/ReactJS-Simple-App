@@ -1,0 +1,28 @@
+.card {
+    display: grid;
+    max-width: 100%;
+}
+
+.card .button {
+    align-self: flex-end;
+}
+
+.card {
+    box-shadow: 0px 1px 5px #666666;
+    background-color: lightsalmon;
+    color: #ffffff
+}
+
+.card__title {
+    font-size: 2rem;
+    padding: 0.6rem;
+}
+
+.card__description {
+    padding: 0.6rem;
+    line-height: 1.8rem;
+}
+
+img {
+    max-width: 80%;
+}
